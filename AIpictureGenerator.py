@@ -5,13 +5,13 @@ from g4f.client import Client
 client = Client()
 
 def choose_model():
-    print("Выберите модель генерации картинки:")
-    print("1 - bing (рекомендуется)")
+    print("Choose image generation model:")
+    print("1 - bing (recommended)")
     print("2 - deepai")
     print("3 - flux")
     print("4 - pollinations")
     while True:
-        choice = input("Введите номер модели (1-4): ").strip()
+        choice = input("Choose model number (1-4): ").strip()
         if choice == "1":
             return "bing"
         elif choice == "2":
@@ -21,20 +21,20 @@ def choose_model():
         elif choice == "4":
             return "pollinations"
         else:
-            print("Некорректный ввод, попробуйте снова.")
+            print("Incorrect input, try again.")
 
 model = choose_model()
 
 while True:
-    prompt = input("\nВведите промт (или 'exit' для выхода, '/model' для смены модели): ").strip()
+    prompt = input("\nEnter the promt (or 'exit' to exit, '/model' to change model): ").strip()
 
     if prompt.lower() in ["выход", "exit", "quit"]:
-        print("Выход из программы.")
+        print("Exiting the program.")
         break
 
     if prompt.lower() == "/model":
         model = choose_model()
-        print(f"Модель изменена на: {model}")
+        print(f"The model has been changed to: {model}")
         continue
 
     try:
@@ -46,9 +46,9 @@ while True:
         image_url = response.data[0].url
 
         pyperclip.copy(image_url)
-        print(f"\nГотово!\nСсылка скопирована в буфер обмена:\n{image_url}")
+        print(f"\nDone!\nLink has been copied to the clipboard:\n{image_url}")
 
         winsound.MessageBeep()
 
     except Exception as e:
-        print(f"❌ Ошибка генерации: {e}")
+        print(f"❌ Generation error: {e}")
