@@ -3,6 +3,8 @@
 
 Удобный консольный инструмент для генерации изображений по текстовому описанию (промту) на Python, использующий библиотеку [`g4f`](https://github.com/xtekky/gpt4free). Поддерживает несколько моделей: Bing, DeepAI, Flux и Pollinations.
 
+<img width="1024" height="1024" alt="1024" src="https://github.com/user-attachments/assets/4efbbce6-505e-40fd-bf0b-c4703a066db0" />
+
 ---
 
 ## Содержание
