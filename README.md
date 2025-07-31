@@ -116,3 +116,6 @@ The script intercepts all exceptions that occur when accessing the API and outpu
 * **GUI**: implement a graphical interface with the `tkinter` or `PyQt` libraries
 * **Logging**: save the history of requests and responses to a file
 * **Parallel queries**: implement batch generation of promts
+
+## ❤️ Support
+If you find this useful, feel free to star ⭐ the repo or share your improvements!
