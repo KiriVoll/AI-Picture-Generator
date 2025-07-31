@@ -1,42 +1,41 @@
 # AI Picture Generator
-# Скрипт генерации изображений по промтам с выбором модели
+# Script for generating images based on experiments with model selection
 
-Удобный консольный инструмент для генерации изображений по текстовому описанию (промту) на Python, использующий библиотеку [`g4f`](https://github.com/xtekky/gpt4free). Поддерживает несколько моделей: Bing, DeepAI, Flux и Pollinations.
+A convenient console tool for generating images based on a text description (promt) in Python using the [g4f](https://github.com/xtekky/gpt4free ) library. It supports several models: Bing, DeepAI, Flux and Pollinations.
 
 <img width="1024" height="1024" alt="1024" src="https://github.com/user-attachments/assets/4efbbce6-505e-40fd-bf0b-c4703a066db0" />
 
 ---
 
-## Содержание
+## Content
 
-* [Функциональность](#функциональность)
-* [Требования](#требования)
-* [Установка](#установка)
-* [Запуск и использование](#запуск-и-использование)
-* [Архитектура скрипта](#архитектура-скрипта)
-* [Обработка ошибок](#обработка-ошибок)
-* [Настройки и расширения](#настройки-и-расширения)
+* [Functionality](#functionality)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Launch and Use](#launch-and-use)
+* [Error Handling](#error-handling)
+* [Settings and Extensions](#settings-and-extensions)
 
 ---
 
-## Функциональность
+## Functionality
 
-1. **Выбор модели генерации**
+1. **Choosing a generation model**
 
-   * Bing (рекомендуется)
+   * Bing (recommended)
    * DeepAI
    * Flux
    * Pollinations
-2. **Основной цикл**
+2. **The main cycle**
 
-   * Ввод промта пользователем
-   * Команды:
+   * User input of promt
+   * Commands:
 
-     * `выход`, `exit`, `quit` — завершить работу скрипта
-     * `/model` — сменить модель без перезапуска
-3. **Генерация и вывод результата**
+     * `exit`, `exit`, `quit` — terminate the script
+     * `/model` — change the model without restarting
+3. **Result generation and output**
 
-   * Запрос к API:
+   * API request:
 
      ```python
      response = client.images.generate(
@@ -46,40 +45,40 @@
      )
      image_url = response.data[0].url
      ```
-   * Автокопирование ссылки в буфер обмена (`pyperclip.copy`)
-   * Звуковой сигнал об успешной генерации (`winsound.MessageBeep`)
-4. **Обработка ошибок**
+   * Auto-copying of the link to the clipboard (`pyperclip.copy`)
+   * Beep on successful generation (`winsound.MessageBeep`)
+4. **Error handling**
 
-   * Перехват исключений и вывод сообщения:
+   * Interception of exceptions and message output:
 
      ```text
-     ❌ Ошибка генерации: <текст ошибки>
+      Generation error: <error text>
      ```
 
 ---
 
-## Требования
+## Requirements
 
 * Python 3.7+
-* Windows (для работы `winsound`)
+* Windows (for `winsound` operation)
 
-### Зависимости
+### Dependencies
 
 * [`g4f`](https://pypi.org/project/g4f/)
 * `pyperclip`
-* `winsound` (входит в стандартную библиотеку Windows)
+* `winsound` (included in the Windows standard library)
 
 ---
 
-## Установка
+## Installation
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/KiriVoll/AI-Picture-Generator.git
    cd AI-Picture-Generator
    ```
-2. Установите зависимости:
+2. Install the dependencies:
 
    ```bash
    pip install g4f pyperclip
@@ -87,33 +86,33 @@
 
 ---
 
-## Запуск и использование
+## Launch and Use
 
-1. Запустите скрипт командой:
+1. Run the script with the command:
 
    ```bash
    python AIpictureGenerator.py
    ```
-2. При первом запуске выберите модель генерации (1–4).
-3. Введите промт в консоль и нажмите Enter.
-4. После генерации:
+2. At the first launch, select the generation model (1-4).
+3. Enter the promt in the console and press Enter.
+4. After generation:
 
-   * Ссылка на изображение скопируется в буфер обмена.
-   * Вы услышите звуковой сигнал.
-5. Для смены модели введите команду `/model`.
-6. Для выхода используйте `выход`, `exit` или `quit`.
-
----
-
-## Обработка ошибок
-
-Скрипт перехватывает все исключения, возникающие при обращении к API, и выводит их в понятном формате. Это позволяет продолжить работу после неудачного запроса.
+   * The link to the image will be copied to the clipboard.
+   * You will hear a beep.
+5. To change the model, enter the command `/model`.
+6. Use `quit`, `exit` or `выход` to exit.
 
 ---
 
-## Настройки и расширения
+## Error Handling
 
-* **Форматы ответа**: добавить поддержку `base64` или байтовых данных
-* **GUI**: реализовать графический интерфейс с библиотеками `tkinter` или `PyQt`
-* **Логирование**: сохранять историю запросов и ответов в файл
-* **Параллельные запросы**: реализовать пакетную генерацию промтов
+The script intercepts all exceptions that occur when accessing the API and outputs them in a clear format. This allows you to continue working after an unsuccessful request.
+
+---
+
+## Settings and Extensions
+
+* **Response formats**: add support for `base64` or byte data
+* **GUI**: implement a graphical interface with the `tkinter` or `PyQt` libraries
+* **Logging**: save the history of requests and responses to a file
+* **Parallel queries**: implement batch generation of promts
