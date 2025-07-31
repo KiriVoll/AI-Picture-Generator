@@ -26,7 +26,7 @@ def choose_model():
 model = choose_model()
 
 while True:
-    prompt = input("\nВведите промт (или 'выход' для выхода, '/model' для смены модели): ").strip()
+    prompt = input("\nВведите промт (или 'exit' для выхода, '/model' для смены модели): ").strip()
 
     if prompt.lower() in ["выход", "exit", "quit"]:
         print("Выход из программы.")
