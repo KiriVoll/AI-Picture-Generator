@@ -74,8 +74,8 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/KiriVoll/CheckFoldersName.git
-   cd CheckFoldersName
+   git clone https://github.com/KiriVoll/AI-Picture-Generator.git
+   cd AI-Picture-Generator
    ```
 2. Установите зависимости:
 
@@ -90,7 +90,7 @@
 1. Запустите скрипт командой:
 
    ```bash
-   python script.py
+   python AIpictureGenerator.py
    ```
 2. При первом запуске выберите модель генерации (1–4).
 3. Введите промт в консоль и нажмите Enter.
