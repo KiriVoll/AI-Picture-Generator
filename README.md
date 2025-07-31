@@ -1,4 +1,4 @@
-# CheckFoldersName
+# AI Picture Generator
 # Скрипт генерации изображений по промтам с выбором модели
 
 Удобный консольный инструмент для генерации изображений по текстовому описанию (промту) на Python, использующий библиотеку [`g4f`](https://github.com/xtekky/gpt4free). Поддерживает несколько моделей: Bing, DeepAI, Flux и Pollinations.
