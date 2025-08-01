@@ -31,7 +31,7 @@ A convenient console tool for generating images based on a text description (pro
    * User input of promt
    * Commands:
 
-     * `exit`, `exit`, `quit` — terminate the script
+     * `exit`, `выход`, `quit` — terminate the script
      * `/model` — change the model without restarting
 3. **Result generation and output**
 
